@@ -1,0 +1,81 @@
+html {
+    font-family: 微軟正黑體;
+    color: #2E2D2D;
+    width: 375px;
+}
+
+
+
+.page-header  {
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between ;
+    align-items : center;
+    background-color: rgb(224, 255, 240);
+}
+
+
+.travel-cover{
+    opacity : 0.8;
+    filter: brightness(80%);
+}
+
+.home,.setting{
+    opacity : 0.6;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sum {
+    margin: 20px 0 10px 0;
+}
+
+span {
+    text-align:center;
+    display: block; 
+}
+.travels {
+    align-items:  flex-start;
+    display: flex;
+    flex-direction: column ;
+    /* height: 80px; */
+    background-color: beige;
+}
+
+.home-travels {
+    padding: 0;
+}
+
+li{
+    list-style-type:none;
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+
+.trip{
+    color:#e2e4e4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0;
+    position: absolute; 
+    top:20%; 
+    left: 30%;
+}
+
+.info{
+    text-align:center;
+    display: block; 
+}
+
+.date{
+    font-size: small;
+}
+
+.spend{
+    font-size: small;
+    width: 130px;
+    border: 1px solid #e2e4e4 ;
+    border-radius: 200px;
+}

@@ -40,6 +40,7 @@ app.get('/search', async (req, res) => {
   }
 
   const results = await searchHN(searchQuery);
+  console.log(results)
   res.render('search', {
     title: `Search results for: ${searchQuery}`,
     searchResults: results,
