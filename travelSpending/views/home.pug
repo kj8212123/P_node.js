@@ -3,19 +3,19 @@ extend default
 block content     
     .container 
         .sum
-            span have 4 travels,3 countrys already! 
+            span you have 4 travels, 3 countrys already! 
         .future.travels 
             strong.homeTitle UPCOMING
             ul.home-travels.future-travels
                 each travel in futureTravels  
-                    li
-                        img.travel-cover(src='/icon/sunsat2.jpg' width='359' height='300')
+                    li.trip-list
+                        img.travel-cover(src='/icon/sunsat2.jpg' )
                         .trip(onclick=`location.href='https://www.google.com'`)
                             strong.info.countryName #{travel.countryName}
                             p.info.date #{travel.date}  
                             br
                             br
-                            img.country-flag(src='/icon/philippines.png' width='15' )
+                            img.country-flag(src='/icon/philippines.png' width='20' )
                             br
                             br
                             p.info.spend #{travel.spend}
@@ -23,9 +23,19 @@ block content
         .past.travels
             strong.homeTitle PAST 
             ul.home-travels.past-travels
-                li.travel
-                    a(href='#')
-                        img(src='/icon/japan.png' height='300')
-                li.travel
-                    a(href='#')
-                        img(src='/icon/south-korea.png' height='300')
+                each travel in pastTravels  
+                    li.trip-list
+                        img.travel-cover(src='/icon/lake.jpg' )
+                        .trip(onclick=`location.href='https://www.google.com'`)
+                            strong.info.countryName #{travel.countryName}
+                            p.info.date #{travel.date}  
+                            br
+                            br
+                            img.country-flag(src='/icon/japan.png' width='20' )
+                            br
+                            br
+                            p.info.spend #{travel.spend}
+        .homeAddBotton(onclick=`location.href='/add'`)
+            .addNew New Travel
+
+        

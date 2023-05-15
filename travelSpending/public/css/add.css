@@ -1,0 +1,58 @@
+html {
+    font-family: 微軟正黑體;
+    color: #2E2D2D;
+    width: 375px;
+    margin: 0;
+    
+}
+
+.select-top-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 3px 0 20px 0;
+}
+
+p{
+    display: block; 
+    width:100%;
+    text-align: center;    
+}
+
+  /* 選擇國家的搜尋欄先隱藏 */
+.select-search-bar {   
+    display:none;
+    /* text-align: center;     */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.select-search-bar img {
+    position: absolute;
+    margin: 3px 0 0 0;
+}
+
+.option,.option-info{
+    cursor: pointer;
+    margin:10px 0 0 0;
+    padding:0 5px 5px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .option:focus{
+    border: 2px solid #8a8888;
+    border-radius: 10px;
+} */
+
+img.select-flag{
+    margin: 0 10px 0 0;
+}
+
+ 
+
+
+
