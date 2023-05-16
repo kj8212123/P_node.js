@@ -1,11 +1,19 @@
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
+const mongoose = require('mongoose');
+const dbURL= 'mongodb+srv://aaaa1111:aaaa1111@nodetest.wsj9pmc.mongodb.net/?retryWrites=true&w=majority';
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 //將pug設為模板引擎
 app.set('view engine', 'pug');
 
+
+//連上連上MongoDB
+mongoose.connect(dbURL);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 var futureTravels = 
     [              
