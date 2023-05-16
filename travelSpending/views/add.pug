@@ -6,20 +6,29 @@ html
       meta(http-equiv='X-UA-Compatible' content='ie=edge')
       title= title
       link(rel='stylesheet' type='text/css' href='/css/add.css')
+
 body 
-    .select-top-bar
-        img(src='/icon/close.png' width='17' onclick=`location.href='/'`)
-        p Please select the country 
-    .select-search-bar 
-        img(src='/icon/loupe.png' width='17')
-        input.home-input(autofocus='' placeholder='      Country name' type='search' name='q') 
-    .select-country-list
-        form(action='/addConfirm' method='POST')
-            each country in countries  
-                .option(tabindex="-1")
-                    .option-info
-                        img.select-flag(src='/icon/'+`${country.value}`+'.png' height=30)                    
-                        label.radio-label(for=`${country.name}`) #{country.name}
-                    input.country(type='radio' name='country' id=`${country.name}` value=`${country.name}` )             
+    .select-erea
+        .select-top-bar
+            img(src='/icon/close.png' width='17' onclick=`location.href='/'`)
+            p Please select the country 
+        .select-search-bar 
+            img(src='/icon/loupe.png' width='17')
+            input.home-input(autofocus='' placeholder='      Country name' type='search' name='q') 
+        .select-country-list
+            form(action='/addConfirm' method='POST')
+                each country in countries  
+                    .option(tabindex="-1" onclick='radioCheck(this)')
+                        .option-info
+                            img.select-flag(src='/flag/'+`${country.value}`+'.png' height=30)                    
+                            label.radio-label(for=`${country.name}`) #{country.name}
+                        input.country(type='radio' name='country' id=`${country.name}` value=`${country.value}`)             
     .confirm-area
-        
+        strong Selected Country  :  
+        span.selectedCountry(id='selectedCountry')
+        .AddBotton(onclick='createTrip()')
+            .addNew Add
+    script
+        include ../js/add.js 
+
+

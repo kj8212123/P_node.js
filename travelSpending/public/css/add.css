@@ -7,11 +7,18 @@ html {
 }
 
 .select-top-bar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    margin: 3px 0 20px 0;
+    margin: 0 0 20px 0;
+}
+.select-country-list{
+    padding: 10% 0 30% 0;
 }
 
 p{
@@ -29,7 +36,7 @@ p{
 }
 
 .select-search-bar img {
-    position: absolute;
+    position: relative;
     margin: 3px 0 0 0;
 }
 
@@ -43,16 +50,52 @@ p{
     justify-content: space-between;
 }
 
-/* .option:focus{
+.option:focus{
     border: 2px solid #8a8888;
     border-radius: 10px;
-} */
+}
 
 img.select-flag{
     margin: 0 10px 0 0;
 }
 
- 
+.confirm-area{
+    background-color: white;
+    margin: 5px 0 0 0;
+    width: 100%;
+    border-top: 1px solid #8a8888;
+    height:16%;
+    position: fixed;
+    bottom: 0;
+}
+
+strong,span{
+    border-top: 1px solid #8a8888;
+    padding:0 10px 5px 5px;
+}
+
+.AddBotton{
+    position: fixed;  
+    left: 50%;
+    transform: translate(-50%, -50%);   
+    bottom: 1%;
+    z-index: 1000;
+}
+
+.addNew{
+    font-weight: 1000;
+    color: whitesmoke;
+    display:flex;
+    justify-content: center;
+    align-items: center ;
+    width: 150px;
+    height: 40px;
+    border: 1px solid #7393ce;
+    border-radius: 50px;
+    background-color: #7393ce;
+    
+}
+
 
 
 

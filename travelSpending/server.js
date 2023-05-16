@@ -1,13 +1,10 @@
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
-
-
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 //將pug設為模板引擎
 app.set('view engine', 'pug');
-
 
 
 var futureTravels = 
@@ -29,7 +26,11 @@ var countries =
         {name:'South-Korea',value:'south-korea'},
         {name:'Japan',value:'japan'},
         {name:'UK',value:'united-kingdom'},
-        {name:'United State',value:'united-states'}
+        {name:'United State',value:'united-states'},
+        {name:'China',value:'china'},
+        {name:'Singapore',value:'singapore'},
+        {name:'Hong Kong',value:'hong-kong'},
+        {name:'Thailand',value:'thailand'}
     ]
 
 app.get('/', (req, res) => {
@@ -44,6 +45,13 @@ app.get('/', (req, res) => {
 app.get('/add', (req,res) => {
     res.render('add', {
         countries
+    });
+})
+
+app.post('/addConfirm',(req,res) => {
+    console.log(req);
+    res.render('travel', {
+        
     });
 })
 

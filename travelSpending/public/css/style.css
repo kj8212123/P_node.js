@@ -101,11 +101,11 @@ li{
 
 .addNew{
     font-weight: 1000;
-    color: #2E2D2D;
+    color: whitesmoke;
     display:flex;
     justify-content: center;
     align-items: center ;
-    width: 230px;
+    width: 150px;
     height: 40px;
     border: 1px solid #7393ce;
     border-radius: 50px;
