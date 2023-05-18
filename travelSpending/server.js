@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
+// const Rolldate = require('rolldate');
+// 
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 //將pug設為模板引擎
@@ -32,6 +34,30 @@ var countries =
         {name:'Hong Kong',value:'hong-kong'},
         {name:'Thailand',value:'thailand'}
     ]
+// var rd = new Rolldate({
+//         el: '.end-date',
+//         format: 'YYYY-MM-DD',
+//         beginYear: 2000,
+//         endYear: 2100,
+//         minStep:1,
+//         lang:{title:'自定义标题'},
+//         trigger:'tap',
+//         init: function() {
+//           console.log('插件开始触发');
+//         },
+//         moveEnd: function(scroll) {
+//           console.log('滚动结束');
+//         },
+//         confirm: function(date) {
+//           console.log('确定按钮触发');
+//         },
+//         cancel: function() {
+//           console.log('插件运行取消');
+//         }
+//     })
+//     rd.show();
+//     rd.hide();
+        
 
 app.get('/', (req, res) => {
     // console.log(futureTravels);
@@ -45,6 +71,15 @@ app.get('/', (req, res) => {
 app.get('/add', (req,res) => {
     res.render('add', {
         countries
+    });
+})
+
+app.get('/travel', (req,res) => {
+    res.render('travel', {
+        travel:{
+            countryName: 'Philippine',
+            budgetSign:"yen"
+        }
     });
 })
 

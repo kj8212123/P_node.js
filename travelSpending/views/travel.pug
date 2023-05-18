@@ -5,7 +5,61 @@ html
       meta(name='viewport' content='width=device-width, initial-scale=1.0')
       meta(http-equiv='X-UA-Compatible' content='ie=edge')
       title= title
-      link(rel='stylesheet' type='text/css' href='/css/add.css')
-
+      link(rel='stylesheet' type='text/css' href='/css/travel.css')
 body 
-    h1 this is your spending
+    header 
+      .page-header 
+          a.home(href='/')
+            img(src='/line/home.png' height='30')
+          p #{travel.countryName}
+          a.setting(href='/add')
+            img(src='/line/gear.png' height='30')    
+    .content 
+      .title.content-item 
+        strong Please enter your travel title here
+        input(type="text" name="title" cols="10" rows="100" placeholder="write somethine about your trip") 
+      .country.content-item 
+        strong Travel Country
+        .show-country
+          img(src='/flag/Philippines.png' height='20')
+          span #{travel.countryName}
+      .date.content-item 
+        strong Travel Date
+        .show-date
+          span From     
+          input.start-date(type='date')
+          span To
+          input.end-date(type='date')
+      .currency-budget.content-item 
+        strong Currency & Budget
+        .show-budget 
+          span #{travel.budgetSign}
+          a(href='/budget') ETID
+      .cover-image.content-item 
+        strong Cover-Image
+        img.cover(src='/icon/lake.jpg')
+      .delete
+
+
+
+    footer
+      .footer 
+          .profile.footer-itme  
+            img(src='/line/plane.png' height='20')
+            span Porfile 
+          .budgets.footer-itme 
+            img(src='/line/wallet.png' height='20')
+            span Budgets 
+          .add-spend.footer-itme.link-blue 
+            img(src='/line/add.png' height='20') 
+            br
+          .expenses.footer-itme
+            img(src='/line/file.png' height='20')
+            span Expenses  
+          .report.footer-itme
+            img(src='/line/pie.png' height='20')
+            span Report
+script
+        include ../js/travel.js 
+  
+

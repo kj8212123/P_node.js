@@ -18,5 +18,5 @@ function createTrip(){
     var arr = Array.prototype.slice.call( list )
     var ele=arr.find(ele => ele.getAttribute('checked') =='checked')
     console.log(ele)
-    
+    location.href='/travel';
 }

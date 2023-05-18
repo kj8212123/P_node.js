@@ -1,0 +1,143 @@
+html,* {
+    font-family: 微軟正黑體;
+    color: #2E2D2D;
+    /* width: 375px; */
+    margin: 0;
+    padding:0 ;    
+}
+
+/* header */
+header{
+    width:100%;
+    background-color:rgb(181, 235, 222);
+    position: fixed;  
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0%);   
+    z-index: 1000;
+}
+
+.page-header  {
+    padding:0 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    background-color:rgb(235, 181, 181);
+    /* background-color: rgb(224, 255, 240); */
+}
+
+.page-header > a > img {
+    opacity: 0.8;
+}
+
+p{
+    display: block; 
+    width:100%;
+    text-align: center;    
+}
+
+/* content */
+.content{
+    padding: 40px 15px 60px 15px;
+
+}
+.content-item {
+    margin: 10px 0 10px 0;
+}
+.content-item > strong{
+    margin: 10px 0 ;
+    display:block
+}
+.content-item > input{
+    background-color: aqua;    
+    width: 100%;
+    height:30px;
+    font-size: 10px;
+    caret-color: #555353;
+    outline: none;
+    border: none; 
+}
+
+.show-country{
+    display: flex;
+    direction: row;
+    justify-items: flex-start;
+    align-items: center;
+}
+.show-country > img{
+    margin-right: 10px;
+}
+
+.show-date > input{
+    background-color: aqua;
+    outline-style: none ;
+    border: 0px;    
+    /* width: 100%; */
+    display:inline-block;
+    margin: 0 5px ; 
+    color: #555353;   
+}
+
+.show-budget{
+    display: flex;
+    direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.show-budget > a {
+    color:#7d9bdb;
+    font-weight: 800;
+    font-size: 10px;
+
+}
+
+.cover{
+    width:100%;
+    max-height:300px;
+    border-radius: 10px;
+}
+
+
+.show-date > span, .show-country > span, .show-budget > span {
+    font-size: 10px;
+    color:#555353
+}
+
+
+/* footer */
+footer{
+    width:100%;
+    background-color:rgb(181, 235, 222);
+    border-top:1px solid #e2e4e4 ;
+    position: fixed;  
+    left: 50%;
+    transform: translate(-50%, 0%);   
+    bottom: 0;
+    z-index: 1000;
+}
+.footer{
+    background-color:rgb(255, 220, 220);
+    padding: 5px 15px 5px 15px ;
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between ;
+    align-items : center;
+}
+
+.profile,.budgets,.add-spend,.expenses,.report{
+    display: flex;
+    flex-direction: column ;
+    align-items : center;
+}
+
+.footer-itme > img, .footer-itme > span {
+    opacity: 0.5;
+    font-size: 10px;
+}
+
+
+
