@@ -5,7 +5,35 @@ html
       meta(name='viewport' content='width=device-width, initial-scale=1.0')
       meta(http-equiv='X-UA-Compatible' content='ie=edge')
       title= title
-      link(rel='stylesheet' type='text/css' href='/css/add.css')
-
+      link(rel='stylesheet' type='text/css' href='/css/travel.css')
 body 
-    h1 this is your spending
+    header 
+      .page-header 
+          a.home(href='/')
+            img(src='/line/home.png' height='30')
+          p #{travel.countryName}
+          a.setting(href='/add')
+            img(src='/line/gear.png' height='30')    
+    block content
+    
+
+    footer
+      .footer 
+          .profile.footer-itme.now-page  
+            img(src='/line/plane.png' height='20')
+            span Porfile 
+          .budgets.footer-itme 
+            img(src='/line/wallet.png' height='20')
+            span Budgets 
+          .add-spend
+            img(src='/line/plus.png' height='25') 
+          .expenses.footer-itme
+            img(src='/line/file.png' height='20')
+            span Expenses  
+          .report.footer-itme
+            img(src='/line/pie.png' height='20')
+            span Report
+script
+        include ../js/travel.js 
+  
+
