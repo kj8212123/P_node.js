@@ -14,45 +14,19 @@ body
           p #{travel.countryName}
           a.setting(href='/add')
             img(src='/line/gear.png' height='30')    
-    .content 
-      .title.content-item 
-        strong Please enter your travel title here
-        input(type="text" name="title" cols="10" rows="100" placeholder="write somethine about your trip") 
-      .country.content-item 
-        strong Travel Country
-        .show-country
-          img(src='/flag/Philippines.png' height='20')
-          span #{travel.countryName}
-      .date.content-item 
-        strong Travel Date
-        .show-date
-          span From     
-          input.start-date(type='date')
-          span To
-          input.end-date(type='date')
-      .currency-budget.content-item 
-        strong Currency & Budget
-        .show-budget 
-          span #{travel.budgetSign}
-          a(href='/budget') ETID
-      .cover-image.content-item 
-        strong Cover-Image
-        img.cover(src='/icon/lake.jpg')
-      .delete
-
-
+    block content
+    
 
     footer
       .footer 
-          .profile.footer-itme  
+          .profile.footer-itme.now-page  
             img(src='/line/plane.png' height='20')
             span Porfile 
           .budgets.footer-itme 
             img(src='/line/wallet.png' height='20')
             span Budgets 
-          .add-spend.footer-itme.link-blue 
-            img(src='/line/add.png' height='20') 
-            br
+          .add-spend
+            img(src='/line/plus.png' height='25') 
           .expenses.footer-itme
             img(src='/line/file.png' height='20')
             span Expenses  

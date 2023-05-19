@@ -75,10 +75,24 @@ app.get('/add', (req,res) => {
 })
 
 app.get('/travel', (req,res) => {
-    res.render('travel', {
+    res.render('profile', {
         travel:{
+            id:1,
             countryName: 'Philippine',
-            budgetSign:"yen"
+            budget:[
+                {
+                    budgetSign:"¥",
+                    budgetName:"JPY",
+                    budgetAmount:100000
+                },
+                {
+                    budgetSign:"$",
+                    budgetName:"TWD",
+                    budgetAmount:10000
+                }
+            ]
+            
+            
         }
     });
 })
