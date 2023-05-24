@@ -1,29 +1,25 @@
-const dateEdit = document.querySelector('.date-edit');
-const dateConfirm = document.querySelector('.date-confirm');
 const footerItem = document.querySelectorAll('.footer-itme');
 
-function editDate(){
-   document.querySelector('.start-date').removeAttribute('readonly');
-   document.querySelector('.end-date').removeAttribute('readonly');
-   dateEdit.style.display='none';
-   dateConfirm.removeAttribute('style');
-}
 
-function confirmeditDate(){
-   document.querySelector('.start-date').setAttribute('readonly', true);
-   document.querySelector('.end-date').setAttribute('readonly', true);
-   dateConfirm.style.display='none';
-   dateEdit.removeAttribute('style');
+//footer icon 顏色變換
+var footerColorChange = function footerColorChange(){
+   // console.log(location.href);
+   // console.log(location.pathname);
+   const id = '#'+location.pathname.slice(1)
+   const nowPage= document.querySelector(id);
+   nowPage.classList.add('now-page');
 }
+window.addEventListener('load',footerColorChange,false)
 
+
+//footer跳轉畫面
 var footerGoPage= function footerGoPage(){
-   console.log('111');
-   document.querySelector('.now-page').classList.remove('now-page');
-   this.classList.add('now-page');
+   // console.log('111');
+   // console.log('111'+this.id);
+   location.href='/'+this.id;
 }
-
-dateEdit.addEventListener('click',editDate,false);
-dateConfirm.addEventListener('click',confirmeditDate,false);
 for(var i = 0; i<footerItem.length; i++){
    footerItem[i].addEventListener('click', footerGoPage, false);
 }
+
+

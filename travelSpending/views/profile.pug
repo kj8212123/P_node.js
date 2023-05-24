@@ -1,34 +1,40 @@
 extend travel 
 
 block content 
-    .content
+    .content.colunm-start
       .title.content-item 
-        strong Please enter your travel title here
+        strong.title Please enter your travel title here
         input(type="text" name="title" cols="10" rows="100" placeholder="write somethine about your trip") 
       .country.content-item 
-        strong Travel Country
-        .show-country
+        strong.title Travel Country
+        .show-country.row-start
           img(src='/flag/Philippines.png' height='20')
-          span #{travel.countryName}
+          span.small #{travel.countryName}
       .date.content-item 
-        strong Travel Date
-        .show-date.flex-row
+        strong.title Travel Date
+        .show-date.row-space
           .date-info
-            span From     
+            span.small From     
             input.start-date(type='date' name='startDate' readonly)
-            span To
+            span.small To
             input.end-date(type='date' name='endDate' readonly)
           .switch
             span.date-switch.date-edit.edit-botton  EDIT
             span.date-switch.date-confirm.edit-botton(style='display:none')  OK
       .currency-budget.content-item 
-        strong Currency & Budget
-        .show-currency.flex-row 
+        strong.title Currency & Budget
+        .show-currency.row-space 
           each budget in travel.budget
-            span  #{budget.budgetName} #{' ('} #{budget.budgetSign} #{')'}  #{budget.budgetAmount} 
+            span.small  #{budget.budgetName} #{' ('} #{budget.budgetSign} #{')'}  #{budget.budgetAmount}         
           span.edit-botton ETID
       .cover-image.content-item 
-        strong Cover-Image
+        strong.title Cover-Image
         img.cover(src='/icon/lake.jpg')
-      .deleteBotton(value=`#{travel.id}`)
-        .delete Delete
+      .content-item 
+        .botton.delete-botton(value=`#{travel.id}`)
+          .botton-text Delete
+block script 
+    script 
+        include ../js/travel.js 
+        include ../js/profile.js 
+

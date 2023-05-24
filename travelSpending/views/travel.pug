@@ -1,14 +1,15 @@
 doctype html 
 html 
     head
-      meta(charset='UTF-8')
-      meta(name='viewport' content='width=device-width, initial-scale=1.0')
-      meta(http-equiv='X-UA-Compatible' content='ie=edge')
-      title= title
-      link(rel='stylesheet' type='text/css' href='/css/travel.css')
+      block head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible' content='ie=edge')
+        title= title
+        link(rel='stylesheet' type='text/css' href='/css/travel.css')
 body 
     header 
-      .page-header 
+      .page-header.row-space 
           a.home(href='/')
             img(src='/line/home.png' height='30')
           p #{travel.countryName}
@@ -18,22 +19,21 @@ body
     
 
     footer
-      .footer 
-          .profile.footer-itme.now-page  
+      .footer.row-space 
+          .profile.colunm-space.footer-itme#profile  
             img(src='/line/plane.png' height='20')
             span Porfile 
-          .budgets.footer-itme 
+          .budgets.colunm-space.footer-itme#budget
             img(src='/line/wallet.png' height='20')
             span Budgets 
           .add-spend
             img(src='/line/plus.png' height='25') 
-          .expenses.footer-itme
+          .expenses.colunm-space.footer-itme#expenses
             img(src='/line/file.png' height='20')
             span Expenses  
-          .report.footer-itme
+          .report.colunm-space.footer-itme#report
             img(src='/line/pie.png' height='20')
             span Report
-script
-        include ../js/travel.js 
+block script
   
 

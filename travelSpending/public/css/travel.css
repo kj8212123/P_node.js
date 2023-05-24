@@ -20,10 +20,6 @@ header{
 .page-header  {
     padding:0 15px;
     background-color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
     margin: 0;
     /* background-color:rgb(235, 181, 181); */
 }
@@ -32,25 +28,62 @@ header{
     opacity: 0.8;
 }
 
-p{
-    display: block; 
-    width:100%;
-    text-align: center;    
+/* flex 設定 */
+.row-space{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+}
+.row-start{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.colunm-start{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.colunm-space{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.colum-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* span 文字 */
+span.small{
+    font-size: 10px;
+    color:#555353;
+}
+
+span.bold{
+    font-size: 12px;
+    font-weight: 800;
+    color:#2E2D2D;
 }
 
 /* content */
 .content{
     padding: 40px 15px 60px 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 .content-item {
-    margin: 5px 0 10px 0;
+    display: block;
+    width:100%;
+    margin: 10px 0 5px 0;
 }
-.content-item > strong{
+strong.title{
     margin: 5px 0 ;
-    display:block
+    /* display:block; */
 }
 .content-item > input{
     /* background-color: aqua;     */
@@ -61,76 +94,6 @@ p{
     outline: none;
     border: none; 
 }
-
-.show-country{
-    display: flex;
-    direction: row;
-    justify-items: flex-start;
-    align-items: center;
-}
-.show-country > img{
-    margin-right: 10px;
-}
-
-.flex-row{
-    display: flex;
-    direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.date-info{
-    display: flex;
-    direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-.date-info > input{
-    /* background-color: aqua; */
-    outline-style: none ;
-    border: 0px;    
-    /* width: 100%; */
-    display:inline-block;
-    margin: 0 5px ; 
-    color: #555353;   
-}
-.date-info > span, .show-country > span, .flex-row > span {
-    font-size: 10px;
-    color:#555353;
-}
-.switch{
-    display: inline-block;
-}
-span.edit-botton{
-    color:#9db4e7;
-    font-weight: 800;
-    font-size: 10px;
-}
-
-.cover{
-    width:100%;
-    max-height:300px;
-    border-radius: 10px;
-}
-
-.deleteBotton{
-    align-self: center;
-    padding: 20px 0 0 0;
-}
-
-.delete{
-    font-weight: 1000;
-    color: whitesmoke;
-    display:flex;
-    justify-content: center;
-    align-items: center ;
-    width: 150px;
-    height: 40px;
-    border: 1px solid #7393ce;
-    border-radius: 50px;
-    background-color: #7393ce;
-}
-
 
 /* footer */
 footer{
@@ -146,16 +109,6 @@ footer{
 .footer{
     /* background-color:rgb(255, 220, 220); */
     padding: 10px 15px 5px 15px ;
-    display: flex;
-    flex-direction: row ;
-    justify-content: space-between ;
-    align-items : center;
-}
-
-.profile,.budgets,.add-spend,.expenses,.report{
-    display: flex;
-    flex-direction: column ;
-    align-items : center;
 }
 
 .footer-itme > * {
@@ -167,7 +120,149 @@ footer{
     opacity: 0.9;
 }
 
+/* 按鈕基本設定 */
+.botton{
+    display:flex;
+    justify-content: center;
+    align-items: center ;
+    padding:0 0 5px 0;
+}
+.botton-text{
+    font-weight: 1000;
+    color: whitesmoke;
+    display:flex;
+    justify-content: center;
+    align-items: center ;
+    width: 180px;
+    height: 40px;
+    border: 1px solid #9db4e7;
+    border-radius: 50px;
+    background-color: #9db4e7;
+}
+
+/* profile page */
+.show-country > img{
+    margin-right: 10px;
+}
+.date-info > input{
+    /* background-color: aqua; */
+    outline-style: none ;
+    border: 0px;    
+    /* width: 100%; */
+    display:inline-block;
+    margin: 0 5px ; 
+    color: #555353;   
+}
+
+.switch{
+    display: inline-block;
+}
+span.edit-botton{
+    color:#9db4e7;
+    font-weight: 800;
+    font-size: 10px;
+}
+
+.cover{
+    width:100%;
+    max-height:300px;
+    border-radius: 10px;
+}
+
+/* budget page */
+.budgets-data{
+    margin: 10px 0 20px ;
+}
+
+/* 進度條 */
+.g-container {
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    background: #eee;
+}
+.g-progress {
+    width: 50%;
+    height: inherit;
+    border-radius: 5px 0 0 5px;
+    background: rgb(190, 224, 235);
+}
 
 
+/* budget detail section */
 
+.move-area{
+    /* display: none; */
+    position: absolute;
+    bottom:0; 
+    width:100%;
+    height:550px;
+    background-color:white;
+    border-top:1px solid #e2e4e4 ;  
+    /* transform: translate(0,550px);
+    transition: ease 1s;    */
+    z-index: 1005;
+}
+.hidden{
+    display: none;
+}
+/* .show{
+    transform: translateY(0);
+} */
 
+.detail{
+    padding:0 10px;
+}
+.detail-bar{
+    width: 100%;
+    background-color: white;
+    margin: 20px 0 ;
+}
+p.title{
+    display: block; 
+    width:100%;
+    text-align: center;    
+}
+
+.detail-info-items,.detail-lists {
+    background-color: #eee;
+    padding: 5px 10px;
+}
+
+.detail-lists{
+    height: 200px;
+}
+
+/* dialog */
+dialog.dialog{
+    border: none;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.dialog-add-budget{
+    width: 200px;
+    height: 250px;
+}
+
+.dialog-item{
+    margin:0 0 10px 0;
+}
+
+.dialog-bottons{
+    border-top:1px solid #555353;
+    width:100%;
+    height: 30px;
+    display: flex;
+    direction: row;
+}
+.dialog-botton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+}
+
+.opacity{
+    opacity:0.6;
+}
