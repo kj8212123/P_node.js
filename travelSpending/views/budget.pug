@@ -1,0 +1,90 @@
+extend travel
+
+block content
+    
+    .content.colunm-start
+        
+        each budget in travel.budget 
+            .budget.content-item
+                .info.row-space 
+                    .currency
+                        img(src='/line/wallet.png' height='20')
+                        span.bold #{budget.budgetName} 
+                    .amount 
+                        span.bold #{budget.budgetSign} #{budget.budgetTotal} 
+                .g-container 
+                    .g-progress
+                .money.row-space 
+                    .spend 
+                        span.small #{budget.budgetSign} #{budget.spend} Spent
+                    .remain
+                        span.small #{budget.budgetSign} #{budget.remain} Remaining
+                                
+        .try clilck
+
+    .move-area.hidden
+        .detail
+            .detail-bar.row-start
+                img.close(src='/line/close.png' height="20")
+                p.title #{budgetDetail.budgetName}
+            .detail-info.content-item
+                strong.title Budget Info 
+                .detail-info-items 
+                    .show-name.row-space
+                        span.small Budget Name 
+                        span.bold #{budgetDetail.budgetName}
+                    .show-type.row-space
+                        span.small Budget Type 
+                        span.bold #{budgetDetail.type}
+                    .show-currency.row-space
+                        span.small Currency 
+                        span.bold #{budgetDetail.budgetName}
+                    .exchange-rate.row-space
+                        span.small Exchenge Rate 
+                        span.bold #{budgetDetail.budgetName} #{'1.00 = TWD '} #{budgetDetail.budgetExchange}
+            .detail-amount.content-item
+                .detail-title.row-space
+                    strong.title Budget Amounts 
+                    strong #{budgetDetail.budgetSign} #{budgetDetail.budgetTotal} 
+                .add-botton-and-show
+                    .add-botton.botton
+                        .add.botton-text + Add Budget Value 
+                    .detail-lists.column-start
+                        each detail in budgetDetail.detail
+                            .detail-list.row-space
+                                span.small #{'['} #{detail.date} #{'] Budget added'}
+                                span.bold  #{'+'} #{detail.amount} 
+            .delete-botton.botton.content-item
+                .delete.botton-text Delete This Budget
+        //- .add-botton.botton.content-item.add-budget-currenry
+        //-     .add.botton-text Add Currency/Budget
+
+        //- dialog.dialog.add-budget(id='addBudegtCurrency') 
+        //-     .dialog-add-budget.colum-center
+        //-         .currency.colum-center.dialog-item
+        //-             strongp.title Currnery 
+        //-             span.small ALL 
+        //-         .Budget-Type.colum-center.dialog-item
+        //-             strong.title Budget Type 
+        //-             .type-option.choose(value='both') 
+        //-                 img(src='/line/wallet.png' height='20')
+        //-                 span.small No classidication 
+        //-             .type-option.opacity(value='cash')
+        //-                 img(src='/line/wallet.png' height='20')
+        //-                 span.small Cash only 
+        //-             .type-option.opacity(value='card')
+        //-                 img(src='/line/wallet.png' height='20')
+        //-                 span.small Card only 
+        //-     .dialog-bottons 
+        //-         .close.dialog-botton.opacity CANCLE
+        //-         .confirm.dialog-botton DONE
+
+            
+
+
+
+
+block script 
+    script 
+        include ../js/travel.js 
+        include ../js/budget.js 

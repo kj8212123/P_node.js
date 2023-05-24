@@ -8,6 +8,50 @@ app.use(express.static(path.join(__dirname, 'public')));
 //將pug設為模板引擎
 app.set('view engine', 'pug');
 
+var travel = {
+    id:1,
+    countryName: 'Philippine',
+    budget:    
+    [
+        {
+            budgetSign:"¥",
+            budgetName:"JPY",
+            budgetTotal:100000,
+            type:'cash',
+            remain:98000,
+            spend:2000
+        },
+        {
+            budgetSign:"$",
+            budgetName:"TWD",
+            budgetTotal:10000,
+            type:'cash',
+            spend:1234,
+            remain:8766,
+        }
+    ]
+}
+
+var budgetDetail = {
+        budgetSign:"¥",
+        budgetName:"JPY",
+        budgetTotal:100000,
+        type:'cash',
+        budgetExchange:0.21,
+        remain:98000,
+        spend:2000,
+        detail:[
+            {
+                date:'2023/5/1',
+                amount:80000
+            },
+            {
+                date:'2023/5/6',
+                amount:20000
+            }
+
+        ]
+}
 
 var futureTravels = 
     [              
@@ -74,34 +118,30 @@ app.get('/add', (req,res) => {
     });
 })
 
-app.get('/travel', (req,res) => {
+app.post('/addConfirm',(req,res) => {
+    console.log(req);
     res.render('profile', {
-        travel:{
-            id:1,
-            countryName: 'Philippine',
-            budget:[
-                {
-                    budgetSign:"¥",
-                    budgetName:"JPY",
-                    budgetAmount:100000
-                },
-                {
-                    budgetSign:"$",
-                    budgetName:"TWD",
-                    budgetAmount:10000
-                }
-            ]
-            
-            
-        }
     });
 })
 
-app.post('/addConfirm',(req,res) => {
-    console.log(req);
-    res.render('travel', {
-        
-    });
+app.get('/profile', (req,res) => {
+    res.render('profile',{travel}
+    );
+})
+
+app.get('/budget', (req,res) => {
+    res.render('budget',{travel,budgetDetail}
+    );
+})
+
+app.get('/expenses', (req,res) => {
+    res.render('expenses',{travel}
+    );
+})
+
+app.get('/report', (req, res) =>{
+    res.render('report',{travel}
+    );
 })
 
 const server = app.listen(process.env.PORT || 3000, () => {
