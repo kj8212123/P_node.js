@@ -13,9 +13,11 @@ function radioCheck(element){
 }
 
 function createTrip(){
+
   const list = document.getElementsByClassName('country')
   // console.log(list)
   var arr = Array.prototype.slice.call( list )
   var ele=arr.find(ele => ele.getAttribute('checked') =='checked')
   console.log(ele)
+
 }

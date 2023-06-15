@@ -1,0 +1,40 @@
+extend travel 
+
+block content 
+    .content.colunm-start
+      .title.content-item 
+        strong.title Please enter your travel title here
+        input(type="text" name="title" cols="10" rows="100" placeholder="write somethine about your trip") 
+      .country.content-item 
+        strong.title Travel Country
+        .show-country.row-start
+          img(src='/flag/Philippines.png' height='20')
+          span.small #{travel.countryName}
+      .date.content-item 
+        strong.title Travel Date
+        .show-date.row-space
+          .date-info
+            span.small From     
+            input.start-date(type='date' name='startDate' readonly)
+            span.small To
+            input.end-date(type='date' name='endDate' readonly)
+          .switch
+            span.date-switch.date-edit.edit-botton  EDIT
+            span.date-switch.date-confirm.edit-botton(style='display:none')  OK
+      .currency-budget.content-item 
+        strong.title Currency & Budget
+        .show-currency.row-space 
+          each budget in travel.budget
+            span.small  #{budget.budgetName} #{' ('} #{budget.budgetSign} #{')'}  #{budget.budgetAmount}         
+          span.edit-botton ETID
+      .cover-image.content-item 
+        strong.title Cover-Image
+        img.cover(src='/icon/lake.jpg')
+      .content-item 
+        .botton.delete-botton(value=`#{travel.id}`)
+          .botton-text Delete
+block script 
+    script 
+        include ../js/travel.js 
+        include ../js/profile.js 
+
